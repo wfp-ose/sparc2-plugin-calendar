@@ -1,0 +1,9 @@
+---
+controllers:
+  - SPARCControllerCalendar.js
+directives:
+  - sparcCalendar.js
+templates:
+  - sparc_calendar.tpl.html
+less:
+  - sparc_calendar.less
