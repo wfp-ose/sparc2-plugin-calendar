@@ -15,8 +15,8 @@
 
     a {
       border-radius: 6px 6px 0px 0px;
-      transition: width @sparc-calendar-transition ease-in-out;
-      transition: height @sparc-calendar-transition ease-in-out;
+      transition: width @geodash-calendar-transition ease-in-out;
+      transition: height @geodash-calendar-transition ease-in-out;
     }
 
     a:hover {
@@ -25,9 +25,10 @@
     }
 
     a.btn-primary:hover, a.btn-primary:focus {
-      color: #fff;
-      background-color: #286090;
-      border-color: #204d74;
+      /* No need to override, since using WFP Bootstrap
+      color: @geodash-calendar-button-hover-color;
+      background-color: @geodash-calendar-button-hover-background-color;
+      border: @geodash-calendar-button-hover-border;*/
     }
 
     a.selected {
