@@ -1,22 +1,15 @@
-geodash.controllers["SPARCControllerCalendar"] = function(
-  $scope,
-  $element,
-  $controller,
-  $interpolate,
-  state,
-  map_config,
-  live)
+geodash.controllers["SPARCControllerCalendar"] = function($scope, $element, $controller, $interpolate)
 {
   angular.extend(this, $controller('GeoDashControllerBase', {$element: $element, $scope: $scope}));
 
-  $scope.state = state;
+  var mainScope = $element.parents(".geodash-dashboard:first").isolateScope();
+  $scope.dashboard = geodash.util.deepCopy(mainScope.dashboard);
+  $scope.state = geodash.util.deepCopy(mainScope.state);
   $scope.months = MONTHS_ALL;
 
-  $scope.$on("refreshMap", function(event, args){
-    if("state" in args)
-    {
-      $scope.state = args["state"];
-    }
+  $scope.$on("refreshMap", function(event, args)
+  {
+    $scope.state = geodash.util.deepCopy(args.state);
   });
 
   $scope.linkForMonth = function(month)
